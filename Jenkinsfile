@@ -8,7 +8,7 @@ node {
         app = docker.build("cpages/nginx")
     }
     stage('Test image'){
-        docker.image('xavki/nginx').withRun('-p 80:80') { c ->
+        docker.image('cpages/nginx').withRun('-p 80:80') { c ->
             sh 'docker ps'
             sh 'curl localhost:8080'
         }
